@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -161,6 +160,54 @@ transform:scale(1.05);
 box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 
+/* LEARNING RESOURCES */
+
+.resources{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.resource-card{
+background:white;
+padding:15px;
+border-radius:8px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.resource-card img{
+width:100%;
+border-radius:6px;
+}
+
+.resource-card p{
+margin-top:10px;
+font-weight:600;
+color:#0b4a80;
+}
+
+.download-btn{
+display:inline-block;
+margin-top:10px;
+background:#f27c22;
+color:white;
+padding:6px 14px;
+border-radius:4px;
+text-decoration:none;
+font-size:14px;
+}
+
+.download-btn:hover{
+background:#d96512;
+}
+
 /* LIGHTBOX */
 
 .lightbox{
@@ -258,6 +305,10 @@ grid-template-columns:1fr;
 grid-template-columns:1fr 1fr;
 }
 
+.resources{
+grid-template-columns:1fr 1fr;
+}
+
 }
 
 </style>
@@ -279,6 +330,7 @@ grid-template-columns:1fr 1fr;
 <a href="#courses">Subjects</a>
 <a href="#classes">Classes</a>
 <a href="#gallery">Gallery</a>
+<a href="#resources">Resources</a>
 <a href="#map">Location</a>
 <a href="#enquiry">Admission</a>
 </nav>
@@ -407,16 +459,59 @@ Vacation and Regular Classes for
 <h2>Academy Gallery</h2>
 
 <div class="gallery">
+
 <img src="images/gallery4.jpeg" onclick="openImage(this)">
 <img src="images/gallery5.jpeg" onclick="openImage(this)">
 <img src="images/gallery6.jpeg" onclick="openImage(this)">
-
 <img src="images/gallery8.jpeg" onclick="openImage(this)">
 <img src="images/gallery1.jpeg" onclick="openImage(this)">
 <img src="images/gallery2.jpeg" onclick="openImage(this)">
 <img src="images/gallery3.jpeg" onclick="openImage(this)">
 <img src="images/gallery7.jpeg" onclick="openImage(this)">
 
+</div>
+
+</div>
+
+</section>
+
+<!-- STUDENT RESOURCES -->
+
+<section id="resources" class="reveal">
+
+<div class="container">
+
+<h2>Student Learning Resources</h2>
+
+<p style="text-align:center;margin-bottom:30px;">
+Quick revision charts and study materials for students.
+</p>
+
+<div class="resources">
+
+<div class="resource-card">
+<img src="images/resources/tenses-chart.jpg">
+<p>English Tenses Chart</p>
+<a href="images/resources/tenses-chart.jpg" download class="download-btn">Download</a>
+</div>
+
+<div class="resource-card">
+<img src="images/resources/parts-of-speech.jpg">
+<p>Parts of Speech</p>
+<a href="images/resources/parts-of-speech.jpg" download class="download-btn">Download</a>
+</div>
+
+<div class="resource-card">
+<img src="images/resources/math-formulas.jpg">
+<p>Math Formula Sheet</p>
+<a href="images/resources/math-formulas.jpg" download class="download-btn">Download</a>
+</div>
+
+<div class="resource-card">
+<img src="images/resources/periodic-table.jpg">
+<p>Periodic Table</p>
+<a href="images/resources/periodic-table.jpg" download class="download-btn">Download</a>
+</div>
 
 </div>
 
@@ -469,9 +564,6 @@ src="https://docs.google.com/forms/d/1mRE9zir-u8FdP7nE49jI2sL8h8rSdvhy4xEmsuvYRO
 width="100%"
 height="900"
 frameborder="0">
-
-Loading…
-
 </iframe>
 
 </div>
@@ -505,13 +597,10 @@ target="_blank">
 /* IMAGE LIGHTBOX */
 
 function openImage(img){
-
 var lightbox = document.getElementById("lightbox");
 var lightboxImg = document.getElementById("lightbox-img");
-
 lightbox.style.display="flex";
 lightboxImg.src=img.src;
-
 }
 
 function closeImage(){
